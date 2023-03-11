@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+
+.sfondo{
+    background: linear-gradient(180deg, rgba(22,22,22,1) 7%, rgba(65,65,65,1) 56%);
+    min-height: 80vh;
+}
+
+
+.logo{
+    height: 4vh;
+}
+
+.navbar{
+    height: 10%;
+}
+
+
+
+
+.header{
+    height: 80vh;
+}
+
+.drone{
+    background: url(/media/drone.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -25vw;
+  }
+
+
+  @media (max-width: 480px) {
+
+    .navbar{
+        height: 10% !important;
+    }
+
+    .coldrone {
+      height: 40% !important;
+    }
+
+
+    .coltitle{
+        height: 40% !important;
+    }
+
+    .drone{
+        background: url(/media/drone.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: -120vw;
+        background-position-y: -15vh;
+      }
+
+
+      .titoli{
+        height: 60% !important;
+      }
+
+      .sfondo{
+        background: linear-gradient(180deg, rgba(22,22,22,1) 7%, rgba(65,65,65,1) 56%);
+        min-height: 125vh;
+    }
+
+
+    .tuttipost{
+        display: flex;
+        justify-content: space-around !important;
+    }
+
+
+    .inserzioni{
+        width: 90% !important;
+    }
+
+  }
+
+
+  a{
+    text-decoration: none;
+  }
+
+
+  .inserzioni{
+    cursor: pointer;
+  }
