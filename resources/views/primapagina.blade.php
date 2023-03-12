@@ -24,6 +24,9 @@
 </head>
 <body>
 
+    <div class="cursor"></div>
+    <div class="pointer"></div>
+
     <section class = "sfondo">
 
         <nav class="navbar navbar-expand-lg p-4 p-lg-5">
@@ -35,7 +38,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100 d-flex justify-content-end">
                 <li class="nav-item">
-                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                <a class="nav-link active text-white" aria-current="page" href="#" >Home</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link text-white" href="#">Blog</a>
@@ -75,8 +78,8 @@
 
 
     @foreach ($inserzioni as $inserzione)
-    <a href="{{route('dettagli', ['id'=>$inserzione['id']])}}">
         <div class="inserzioni container-fluid d-flex justify-content-center mb-4 mb-lg-5 w-50 ">
+        <a href="{{route('dettagli', ['id'=>$inserzione['id']])}}" class="slide-in-left">
             <div class="row justify-content-center  inserzioni" style="border:1px solid black;">
                     <div class="col-12 col-lg-6  m-0 p-0 ">
                         <img src="{{$inserzione['img']}}" alt="regali tech" class="w-100  m-0 p-0  h-100 inserzioni">
@@ -100,7 +103,32 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-    <script src="/js/main.js"></script>
+    <script>
+
+        const cursor = document.querySelector(".cursor")
+        const pointer = document.querySelector(".pointer")
+        const link = document.querySelectorAll("a");
+
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+            pointer.style.left = e.pageX + 'px';
+            pointer.style.top = e.pageY + 'px';
+        })
+
+        link.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                cursor.classList.add('hover');
+            })
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            })
+        });
+
+    </script>
+
+
 
 </body>
 </html>
