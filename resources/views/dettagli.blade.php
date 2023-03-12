@@ -54,12 +54,12 @@
 
     <div class="container-fluid" >
         <div class="row justify-content-evenly" style = "height : 80vh">
-            <div class="col-6 d-flex justify-content-center align-items-center">
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
                 <img src="{{$inserzione['img']}}" alt="">
             </div>
-            <div class="col-4   d-flex flex-column justify-content-center ">
-                <h1>{{$inserzione['titolo']}}</h1>
-                <h2>{{$inserzione['descrizione']}}</h2>
+            <div class="col-12 col-lg-6 mt-5 mt-lg-0  d-flex flex-column justify-content-center ">
+                <h1 class="mb-4 mt-lg-0">{{$inserzione['titolo']}}</h1>
+                <h3 class="fw-light h5">{{$inserzione['descrizione']}}</h2>
             </div>
         </div>
     </div>
