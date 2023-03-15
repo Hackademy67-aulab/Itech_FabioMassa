@@ -1,58 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<x-layout>
 
-    <title>Home | Block Tech</title>
-
-    <!-- CSS BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- GOOGLE FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Oswald&family=Roboto+Condensed&display=swap" rel="stylesheet">
-
-    <!-- CSS INTERNO -->
-    <link rel="stylesheet" href="/css/style.css">
-
-</head>
-<body>
+    <x-slot name="title">Welcome Page</x-slot>
 
     <div class="cursor"></div>
     <div class="pointer"></div>
 
     <section class = "sfondo">
 
-        <nav class="navbar navbar-expand-lg p-4 p-lg-5">
-        <div class="container-fluid px-2 px-lg-5 ">
-            <img src="/media/logo.png" alt="logo" class="logo">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style = "border: 2px solid white">
-            <i class="fa-solid fa-bars text-white"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav w-100 d-flex justify-content-end">
-                <li class="nav-item">
-                <a class="nav-link active text-white" aria-current="page" href="#" >Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link text-white" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link text-white" href="#">Iscriviti</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link text-white" href="#">Contatti</a>
-                </li>
-            </ul>
-            </div>
-        </div>
-        </nav>
+        <x-navbar/>
 
         <div class="container-fluid">
             <div class="row justify-content-evenly align-items-center header">
@@ -78,19 +33,9 @@
 
 
     @foreach ($inserzioni as $inserzione)
-        <div class="inserzioni container-fluid d-flex justify-content-center mb-4 mb-lg-5 w-50 ">
-        <a href="{{route('dettagli', ['id'=>$inserzione['id']])}}" class="slide-in-left">
-            <div class="row justify-content-center  inserzioni" style="border:1px solid black;">
-                    <div class="col-12 col-lg-6  m-0 p-0 ">
-                        <img src="{{$inserzione['img']}}" alt="regali tech" class="w-100  m-0 p-0  h-100 inserzioni">
-                    </div>
-                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center p-3 p-lg-5">
-                        <h3 class="fw-bolder text-dark">{{$inserzione['titolo']}}</h3>
-                        <p class="p-0 m-0 text-dark">{{$inserzione['descrizione']}}</p>
-                    </div>
-            </div>
-            </div>
-    </a>
+        <x-card
+            :inserzione="$inserzione"
+        />
     @endforeach
 
 
@@ -128,7 +73,4 @@
 
     </script>
 
-
-
-</body>
-</html>
+ </x-layout>
