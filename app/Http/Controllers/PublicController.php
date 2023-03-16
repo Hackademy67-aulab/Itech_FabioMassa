@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
 {
@@ -14,5 +16,20 @@ class PublicController extends Controller
         ];
 
         return view('primapagina', compact('inserzioni'));
+    }
+
+    public function contattaci() {
+        return view('contattaci');
+    }
+
+    public function contactsubmit(Request $request) {
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $text = $request->input('text');
+
+        $info = compact('name','email','text');
+        // dd($name,$email,$test);
+        Mail::to($email)->send(new contactmail($info));
+        return redirect(route('primapagina'))->with('message','Complimenti hai inviato correttamente la mail!');
     }
 }

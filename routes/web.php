@@ -18,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'primapagina'])->name('primapagina');
 
 Route::get('/dettagli/{id}', [DettagliController::class, 'dettagli'])->name('dettagli');
+
+Route::get('/contattaci', [PublicController::class, 'contattaci'])->name('contattaci');
+Route::post('/contactsubmit', [PublicController::class, 'contactsubmit'])->name('contactsubmit');

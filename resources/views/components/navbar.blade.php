@@ -16,7 +16,7 @@
             <a class="nav-link text-white" href="#">Iscriviti</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link text-white" href="#">Contatti</a>
+            <a class="nav-link text-white" href="{{route('contattaci')}}">Contattaci</a>
             </li>
         </ul>
         </div>

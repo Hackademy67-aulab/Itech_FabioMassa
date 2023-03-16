@@ -5,6 +5,12 @@
     <div class="cursor"></div>
     <div class="pointer"></div>
 
+    @if (session('message'))
+        <div class="alertt fade show d-flex justify-content-evenly align-items-center slide-in-top text-center" role="alert" id="mess">
+            <strong class="text-white">{{ session('message') }}</strong>
+        </div>
+    @endif
+
     <section class = "sfondo">
 
         <x-navbar/>
@@ -46,7 +52,7 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 
     <script>
 
